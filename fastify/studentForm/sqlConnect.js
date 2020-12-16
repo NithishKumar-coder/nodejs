@@ -28,7 +28,7 @@ con.connect(function(error){
       })
  
        
-      
+   console.log("hello world")   
 fastify.addContentTypeParser('application/jsoff',(req,done)=>{
   jsonParser(req,(err,body)=>{
     done(err,body)
@@ -49,7 +49,7 @@ fastify.addContentTypeParser('application/x-www-form-urlencoded',(req,done)=>{
     })
     req.on('error',done)
   })
-
+console.log("iam just checking")
 fastify.post('/save',(req,res)=>{
   let data = {name: req.body.name, email: req.body.email, phone_no: req.body.phone_no};
   let sql="INSERT INTO users SET ?";
